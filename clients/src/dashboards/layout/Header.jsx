@@ -8,7 +8,7 @@ const Header = () => {
         <input
           type="text"
           placeholder="Search"
-          className="px-3 py-[1.6rem] border rounded-md outline-0 border-gray-300 focus:border-green-500 h-10"
+          className="px-3 text-[1.6rem] py-[1.6rem] border rounded-md outline-0 border-gray-300 focus:border-green-500 h-10"
         />
 
         <div className="mr-4">
