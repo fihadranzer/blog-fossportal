@@ -39,42 +39,46 @@ const NewsContent = () => {
           </thead>
 
           <tbody>
-            <tr className="bg-white border-b">
-              <td className="px-[2rem] py-[1.6rem]">1</td>
-              <td className="px-[2rem] py-[1.6rem]">This is Hello glass...</td>
-              <td className="px-[2.4rem] py-[1.6rem]">
-                <img
-                  className="h-[4rem] w-[4rem]"
-                  src="https://ik.imagekit.io/txh5evivcha5/Personal%20use/homemade-sushi-image_MdRVmIVDN.jpg?updatedAt=1697536473623"
-                  alt="test-data"
-                />
-              </td>
-              <td className="px-[2.4rem] py-[1.6rem]">Travel</td>
-              <td className="px-[2.4rem] py-[1.6rem]">
-                This is dummy description..
-              </td>
-              <td className="px-[2.4rem] py-[1.6rem]">October 10, 2024</td>
-              <td className="px-[2.4rem] py-[1.6rem]">
-                <span className="px-2 py-[2px] bg-green-100 text-green-800 rounded-lg text-[1.2rem] cursor-pointer">
-                  Active
-                </span>
-              </td>
-              <td className="px-[2.4rem] py-[1.6rem]">
-                <div className="flex justify-start items-center gap-x-4 text-white">
-                  <Link className="p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50">
-                    <FaEye />
-                  </Link>
+            {[1, 2, 3, 4, 5, 6, 7].map((n, i) => (
+              <tr className="bg-white border-b" key={i}>
+                <td className="px-[2rem] py-[1.6rem]">1</td>
+                <td className="px-[2rem] py-[1.6rem]">
+                  This is Hello glass...
+                </td>
+                <td className="px-[2.4rem] py-[1.6rem]">
+                  <img
+                    className="h-[4rem] w-[4rem]"
+                    src="https://ik.imagekit.io/txh5evivcha5/Personal%20use/homemade-sushi-image_MdRVmIVDN.jpg?updatedAt=1697536473623"
+                    alt="test-data"
+                  />
+                </td>
+                <td className="px-[2.4rem] py-[1.6rem]">Travel</td>
+                <td className="px-[2.4rem] py-[1.6rem]">
+                  This is dummy description..
+                </td>
+                <td className="px-[2.4rem] py-[1.6rem]">October 10, 2024</td>
+                <td className="px-[2.4rem] py-[1.6rem]">
+                  <span className="px-2 py-[2px] bg-green-100 text-green-800 rounded-lg text-[1.2rem] cursor-pointer">
+                    Active
+                  </span>
+                </td>
+                <td className="px-[2.4rem] py-[1.6rem]">
+                  <div className="flex justify-start items-center gap-x-4 text-white">
+                    <Link className="p-[6px] bg-green-500 rounded hover:shadow-lg hover:shadow-green-500/50">
+                      <FaEye />
+                    </Link>
 
-                  <Link className="p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yebg-yellow-500/50">
-                    <FaEdit />
-                  </Link>
+                    <Link className="p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yebg-yellow-500/50">
+                      <FaEdit />
+                    </Link>
 
-                  <div className="p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50">
-                    <FaTrash />
+                    <div className="p-[6px] bg-red-500 rounded hover:shadow-lg hover:shadow-red-500/50">
+                      <FaTrash />
+                    </div>
                   </div>
-                </div>
-              </td>
-            </tr>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
