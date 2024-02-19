@@ -9,6 +9,8 @@ import Unable from "./dashboards/pages/Unable";
 import AddWriter from "./dashboards/pages/AddWriter";
 import Writers from "./dashboards/pages/Writers";
 import News from "./dashboards/pages/News";
+import Profile from "./dashboards/pages/Profile";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -25,6 +27,7 @@ const App = () => {
 
             <Route path="unable-access" element={<Unable />} />
             <Route path="news" element={<News />} />
+            <Route path="profile" element={<Profile />} />
 
             <Route path="" element={<ProtectRules role="admin" />}>
               <Route path="admin" element={<AdminIndex />} />

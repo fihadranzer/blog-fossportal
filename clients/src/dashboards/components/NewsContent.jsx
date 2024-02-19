@@ -2,6 +2,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaEye, FaEdit, FaTrash } from "react-icons/fa";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+
 const NewsContent = () => {
   return (
     <div>
@@ -81,6 +83,25 @@ const NewsContent = () => {
             ))}
           </tbody>
         </table>
+      </div>
+      <div className="flex items-center justify-end px-10 gap-x-3 text-slate-600">
+        <div className="flex gap-x-3 justify-center items-center">
+          <p className="px-4 py-3 font-semibold text-[1.4rem]">News per page</p>
+          <select
+            id="category"
+            name="category"
+            className="px-3 text-[1.2rem] py-1  border rounded-md outline-0 border-gray-300 focus:border-green-500 h-14">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <p className="px-6 py-6 font-semibold text-[1.4rem]">6/22 - of 5</p>
+        <div className="flex items-center gap-x-3">
+          <IoIosArrowBack className="w-5 h-5 cursor-pointer" />
+          <IoIosArrowForward className="w-5 h-5 cursor-pointer" />
+        </div>
       </div>
     </div>
   );
