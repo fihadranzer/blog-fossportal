@@ -6,7 +6,7 @@ import { Outlet, Navigate } from "react-router-dom";
 const ProtectRules = ({ role }) => {
   const userInfo = {
     name: "farid",
-    role: "admin",
+    role: "writer",
   };
 
   if (userInfo.role === role) {

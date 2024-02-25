@@ -18,6 +18,7 @@ const Profile = () => {
           </label>
           <input className="hidden" type="file" name="img" id="img" />
         </div>
+        
         <div className="text-[#404040] flex flex-col gap-y-1 justify-center items-start text-[1.6rem]">
           <span>Name : Arfan Chowdhury </span>
           <span>Email: arfan@gmail.com</span>

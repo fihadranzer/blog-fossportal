@@ -5,9 +5,11 @@ import { AiFillDashboard, AiOutlinePlus } from "react-icons/ai";
 import { BiNews } from "react-icons/bi";
 import { FiUsers } from "react-icons/fi";
 import { ImProfile } from "react-icons/im";
+import { FaPlus } from "react-icons/fa";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
+  const userInfo = { role: "writer" };
   return (
     <div className="w-[25rem] h-screen fixed left-0 top-0 bg-white">
       <div className="h-[7rem] flex justify-center items-center">
@@ -20,20 +22,84 @@ const Sidebar = () => {
         </Link>
       </div>
       <ul className="px-3 flex flex-col gap-y-1 font-medium ">
-        <li>
-          <Link
-            to="/dashboard/admin"
-            className={`transition-all duration-300 text-[1.6rem] px-3 ${
-              pathname === "/dashboard/admin"
-                ? "bg-indigo-500 text-white"
-                : "bg-white text-[#404040f6]"
-            } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
-            <span className="text-[2rem]">
-              <AiFillDashboard />
-            </span>
-            <span>Dashboard</span>
-          </Link>
-        </li>
+        {userInfo.role === "admin" ? (
+          <>
+            <li>
+              <Link
+                to="/dashboard/admin"
+                className={`transition-all duration-300 text-[1.6rem] px-3 ${
+                  pathname === "/dashboard/admin"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-white text-[#404040f6]"
+                } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
+                <span className="text-[2rem]">
+                  <AiFillDashboard />
+                </span>
+                <span>Dashboard</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/writer/add"
+                className={`transition-all duration-300 text-[1.6rem] px-3 ${
+                  pathname === "/dashboard/writer/add"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-white text-[#404040f6]"
+                } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
+                <span className="text-[2rem]">
+                  <AiOutlinePlus />
+                </span>
+                <span>Add Writer</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/writers"
+                className={`transition-all duration-300 text-[1.6rem] px-3 ${
+                  pathname === "/dashboard/writers"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-white text-[#404040f6]"
+                } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
+                <span className="text-[2rem]">
+                  <FiUsers />
+                </span>
+                <span>Writers </span>
+              </Link>
+            </li>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link
+                to="/dashboard/writer"
+                className={`transition-all duration-300 text-[1.6rem] px-3 ${
+                  pathname === "/dashboard/writer"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-white text-[#404040f6]"
+                } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
+                <span className="text-[2rem]">
+                  <AiFillDashboard />
+                </span>
+                <span>Dashboard</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/dashboard/news/create"
+                className={`transition-all duration-300 text-[1.6rem] px-3 ${
+                  pathname === "/dashboard/news/create"
+                    ? "bg-indigo-500 text-white"
+                    : "bg-white text-[#404040f6]"
+                } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
+                <span className="text-[2rem]">
+                  <FaPlus />
+                </span>
+                <span>Add News</span>
+              </Link>
+            </li>
+          </>
+        )}
+
         <li>
           <Link
             to="/dashboard/news"
@@ -48,34 +114,7 @@ const Sidebar = () => {
             <span>News</span>
           </Link>
         </li>
-        <li>
-          <Link
-            to="/dashboard/writer/add"
-            className={`transition-all duration-300 text-[1.6rem] px-3 ${
-              pathname === "/dashboard/writer/add"
-                ? "bg-indigo-500 text-white"
-                : "bg-white text-[#404040f6]"
-            } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
-            <span className="text-[2rem]">
-              <AiOutlinePlus />
-            </span>
-            <span>Add Writer</span>
-          </Link>
-        </li>
-        <li>
-          <Link
-            to="/dashboard/writers"
-            className={`transition-all duration-300 text-[1.6rem] px-3 ${
-              pathname === "/dashboard/writers"
-                ? "bg-indigo-500 text-white"
-                : "bg-white text-[#404040f6]"
-            } py-2 hover:shadow-md hover:shadow-indigo-500/20 w-full rounded-sm flex gap-x-2 justify-start items-center hover:bg-indigo-500 hover:text-white`}>
-            <span className="text-[2rem]">
-              <FiUsers />
-            </span>
-            <span>Writes </span>
-          </Link>
-        </li>
+
         <li>
           <Link
             to="/dashboard/profile"
